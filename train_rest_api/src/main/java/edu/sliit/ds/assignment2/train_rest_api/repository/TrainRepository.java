@@ -6,9 +6,11 @@ import org.springframework.stereotype.Repository;
 import edu.sliit.ds.assignment2.train_rest_api.model.Train;
 
 @Repository
-public interface TrainRepository extends MongoRepository<Train, String>{
-	public Train findTrainByType(String type);
-	public Train findTrainById(String trainId);
-	public Train findTrainByNumber(String number);
+public interface TrainRepository extends MongoRepository<Train, String> {
+	public Train findByType(String type);
+
+	public Train findByTrainId(String trainId);
+
+	public Train findByNumber(String number);
 
 }

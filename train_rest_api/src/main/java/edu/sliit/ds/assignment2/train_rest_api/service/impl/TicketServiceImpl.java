@@ -3,14 +3,13 @@ package edu.sliit.ds.assignment2.train_rest_api.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import edu.sliit.ds.assignment2.train_rest_api.model.Ticket;
 import edu.sliit.ds.assignment2.train_rest_api.repository.TicketRepository;
 import edu.sliit.ds.assignment2.train_rest_api.service.TicketService;
 
-@Service("ticketService")
+@Service
 public class TicketServiceImpl implements TicketService {
 
 	@Autowired
@@ -28,12 +27,12 @@ public class TicketServiceImpl implements TicketService {
 
 	@Override
 	public Ticket findByPaymentId(String paymentId) {
-		return ticketRepository.findTicketByPaymentId(paymentId);
+		return ticketRepository.findByPaymentId(paymentId);
 	}
 
 	@Override
 	public Ticket update(Ticket ticket) {
-		Ticket tic = ticketRepository.findTicketByPaymentId(ticket.getPaymentId());
+		Ticket tic = ticketRepository.findByPaymentId(ticket.getPaymentId());
 		tic.setTicket_class(ticket.getTicket_class());
 		tic.setDate(ticket.getDate());
 		tic.setFrom(ticket.getFrom());

@@ -8,6 +8,7 @@ import edu.sliit.ds.assignment2.train_rest_api.model.Ticket;
 
 @Repository
 public interface TicketRepository extends MongoRepository<Ticket, String>{
-	public Ticket findTicketByPaymentId(String payId);
+	//public Ticket findTicketByPaymentId(String payId);
+	public Ticket findByPaymentId(String paymentId);
 
 }

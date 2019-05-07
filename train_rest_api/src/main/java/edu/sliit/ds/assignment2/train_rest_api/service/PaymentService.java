@@ -5,7 +5,6 @@ import java.util.List;
 
 import edu.sliit.ds.assignment2.train_rest_api.model.Payment;
 
-
 public interface PaymentService {
 
 	public Payment create(Payment payment);
